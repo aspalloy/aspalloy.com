@@ -1,121 +1,220 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspalloy | Личный сайт разработчика</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем иконки для красивых кнопок соцсетей -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-</head>
-<body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>Manas Quiz</title>
+		<style>
+html, body, #canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
 
-    <!-- Шапка сайта -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">Aspalloy<span class="dot">.</span></div>
-            <nav>
-                <a href="#about">Обо мне</a>
-                <a href="#projects">Проекты</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-        </div>
-    </header>
+body {
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	touch-action: none;
+}
 
-    <!-- Главный баннер (Hero Section) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Привет! Я <span class="highlight">Асман Рахманов</span></h1>
-            <p class="subtitle">Молодой разработчик-энтузиаст, самоучка и создатель проектов</p>
-            <p class="branding-note">Ранее известный как <em>Aspaloyy</em>. Сейчас я провожу ребрендинг и готовлю новые крутые релизы под брендом <strong>Aspalloy</strong>.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">Посмотреть проекты</a>
-                <a href="https://github.com" target="_blank" class="btn secondary"><i class="fab fa-github"></i> Мой GitHub</a>
-            </div>
-        </div>
-    </section>
+#canvas {
+	display: block;
+}
 
-    <!-- Секция "Обо мне" -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Обо мне</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Я самостоятельно изучаю программирование и Full-stack разработку. Мне нравится создавать быстрые, удобные и полезные веб-сервисы, разбираться в архитектуре приложений и автоматизировать процессы.</p>
-                    <p>Постоянно пробую новые технологии, участвую в open-source жизни и развиваю собственные пет-проекты от идеи до деплоя.</p>
-                </div>
-                <div class="skills-box">
-                    <h3>Мой стек и навыки</h3>
-                    <div class="skills-tags">
-                        <span>HTML5 / CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Git / GitHub</span>
-                        <span>Node.js</span>
-                        <span>UI/UX Design</span>
-                        <span>Ребрендинг и масштабирование</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+#canvas:focus {
+	outline: none;
+}
 
-    <!-- Секция "Проекты" -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Мои проекты</h2>
-            <div class="projects-grid">
-                
-                <!-- Карточка проекта 1 (Замените данные на свои реальные проекты) -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Название Проекта 1</h3>
-                        <p>Краткое и емкое описание вашего главного приложения или сайта. Что оно делает и какую проблему решает?</p>
-                        <div class="project-tech">Tech: HTML, CSS, JS</div>
-                        <a href="#" class="project-link" target="_blank">Смотреть код <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+#status, #status-splash, #status-progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
 
-                <!-- Карточка проекта 2 -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Название Проекта 2</h3>
-                        <p>Описание второго интересного проекта, библиотеки или утилиты, которую вы написали своими руками.</p>
-                        <div class="project-tech">Tech: Node.js, API</div>
-                        <a href="#" class="project-link" target="_blank">Смотреть код <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+#status, #status-splash {
+	top: 0;
+	bottom: 0;
+}
 
-            </div>
-        </div>
-    </section>
+#status {
+	background-color: #1a1613;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
 
-    <!-- Секция "Контакты" -->
-    <section id="contacts" class="contacts">
-        <div class="container text-center">
-            <h2>Связаться со мной</h2>
-            <p>Я всегда открыт к общению, предложениям о сотрудничестве или код-ревью. Пишите мне на новую официальную почту или ищите в соцсетях:</p>
-            
-            <div class="contact-links">
-                <a href="mailto:aspalloy@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i> aspalloy@gmail.com
-                </a>
-            </div>
+#status-splash {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+}
 
-            <!-- Иконки соцсетей -->
-            <div class="social-icons">
-                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                <!-- Сюда можно добавить Telegram, LinkedIn и т.д. -->
-            </div>
-        </div>
-    </section>
+#status-splash.show-image--false {
+	display: none;
+}
 
-    <!-- Подвал сайта -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Aspalloy (Асман Рахманов). Все права защищены.</p>
-            <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Сайт временно размещен на GitHub Pages. Готовлю запуск основного домена aspalloy.com</p>
-        </div>
-    </footer>
+#status-splash.fullsize--true {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
 
-</body>
+#status-splash.use-filter--false {
+	image-rendering: pixelated;
+}
+
+#status-progress, #status-notice {
+	display: none;
+}
+
+#status-progress {
+	bottom: 10%;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#status-notice {
+	background-color: #5b3943;
+	border-radius: 0.5rem;
+	border: 1px solid #9b3943;
+	color: #e0e0e0;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	line-height: 1.3;
+	margin: 0 2rem;
+	overflow: hidden;
+	padding: 1rem;
+	text-align: center;
+	z-index: 1;
+}
+		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+	</head>
+	<body>
+		<canvas id="canvas">
+			Your browser does not support the canvas tag.
+		</canvas>
+
+		<noscript>
+			Your browser does not support JavaScript.
+		</noscript>
+
+		<div id="status">
+			<img id="status-splash" class="show-image--false fullsize--true use-filter--true" src="index.png" alt="">
+			<progress id="status-progress"></progress>
+			<div id="status-notice"></div>
+		</div>
+
+		<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":436488,"index.wasm":37902138},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_THREADS_ENABLED = false;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const statusOverlay = document.getElementById('status');
+	const statusProgress = document.getElementById('status-progress');
+	const statusNotice = document.getElementById('status-notice');
+
+	let initializing = true;
+	let statusMode = '';
+
+	function setStatusMode(mode) {
+		if (statusMode === mode || !initializing) {
+			return;
+		}
+		if (mode === 'hidden') {
+			statusOverlay.remove();
+			initializing = false;
+			return;
+		}
+		statusOverlay.style.visibility = 'visible';
+		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
+		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+		statusMode = mode;
+	}
+
+	function setStatusNotice(text) {
+		while (statusNotice.lastChild) {
+			statusNotice.removeChild(statusNotice.lastChild);
+		}
+		const lines = text.split('\n');
+		lines.forEach((line) => {
+			statusNotice.appendChild(document.createTextNode(line));
+			statusNotice.appendChild(document.createElement('br'));
+		});
+	}
+
+	function displayFailureNotice(err) {
+		console.error(err);
+		if (err instanceof Error) {
+			setStatusNotice(err.message);
+		} else if (typeof err === 'string') {
+			setStatusNotice(err);
+		} else {
+			setStatusNotice('An unknown error occurred.');
+		}
+		setStatusMode('notice');
+		initializing = false;
+	}
+
+	const missing = Engine.getMissingFeatures({
+		threads: GODOT_THREADS_ENABLED,
+	});
+
+	if (missing.length !== 0) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+			let serviceWorkerRegistrationPromise;
+			try {
+				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
+			} catch (err) {
+				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
+			}
+			// There's a chance that installing the service worker would fix the issue
+			Promise.race([
+				serviceWorkerRegistrationPromise.then((registration) => {
+					if (registration != null) {
+						return Promise.reject(new Error('Service worker already exists.'));
+					}
+					return registration;
+				}).then(() => engine.installServiceWorker()),
+				// For some reason, `getRegistration()` can stall
+				new Promise((resolve) => {
+					setTimeout(() => resolve(), 2000);
+				}),
+			]).then(() => {
+				// Reload if there was no error.
+				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
+			});
+		} else {
+			// Display the message as usual
+			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			displayFailureNotice(missingMsg + missing.join('\n'));
+		}
+	} else {
+		setStatusMode('progress');
+		engine.startGame({
+			'onProgress': function (current, total) {
+				if (current > 0 && total > 0) {
+					statusProgress.value = current;
+					statusProgress.max = total;
+				} else {
+					statusProgress.removeAttribute('value');
+					statusProgress.removeAttribute('max');
+				}
+			},
+		}).then(() => {
+			setStatusMode('hidden');
+		}, displayFailureNotice);
+	}
+}());
+		</script>
+	</body>
 </html>
+
