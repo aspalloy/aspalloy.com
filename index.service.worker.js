@@ -4,9 +4,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1790603429|272911858';
+const CACHE_VERSION = '1790765623|289595390';
 /** @type {string} */
-const CACHE_PREFIX = 'Новый игровой пр-sw-cache-';
+const CACHE_PREFIX = 'Manas Quiz-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 /** @type {string} */
 const OFFLINE_URL = 'index.offline.html';
