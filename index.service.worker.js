@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1790932810|721350300_ios_fixed';
+const CACHE_VERSION = '1727883480_v3_ios_fix';
 /** @type {string} */
 const CACHE_PREFIX = 'Manas Quiz-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
